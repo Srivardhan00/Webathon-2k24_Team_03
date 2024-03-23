@@ -16,6 +16,7 @@ function DetailsComponent() {
     <div className="recipe-container">
       <h1 className="recipe-name h1">{recipe.name}</h1>
       <img src={recipe.img} alt={recipe.name} className="recipe-image" />
+      <p className="text-danger fw-bold fs-4">{recipe.username} ({(Math.floor(Math.random()*10)+1)} recipies)</p>
       <div className="recipe-info d-flex gap-5 mt-3 ">
         <h2>Details:</h2>
         <p>Preparation Time: {recipe.prepareTime} minutes</p>

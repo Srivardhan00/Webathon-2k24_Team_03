@@ -22,8 +22,8 @@ export default function ProductsGrid() {
     let filteredProducts = [...products]; // Create a new array to avoid mutating the original one
 
     if (query) {
-      filteredProducts = filteredProducts.filter((product) =>
-        product.name.toLowerCase().includes(query.toLowerCase())|| product.tags.includes(selected.toLowerCase())
+      filteredProducts = products.filter((product) =>
+        product.name.toLowerCase().includes(query.toLowerCase())|| product.tags.includes(query.toLowerCase())
       );
     }
 

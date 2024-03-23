@@ -41,7 +41,7 @@ function RecipeForm() {
         backgroundPosition: "center",
       }}
     >
-      <h1 className="text-center text-white mb-4">
+      <h1 className="text-center text-danger mb-4">
         Share Your Recipe with the World!
       </h1>
       <form
@@ -53,7 +53,157 @@ function RecipeForm() {
           <legend className="text-center fs-2 mb-4">
             Recipe Submission Form
           </legend>
-          {/* Rest of your form elements */}
+          <div className="mb-4">
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Recipe Name:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter a mouthwatering name..."
+              id="name"
+              {...register("name", { required: true })}
+            />
+            {errors.name && (
+              <p className="text-danger">{errors.name.message}</p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="username"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Your Name:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Let us know who you are!"
+              id="username"
+              {...register("username")}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="tags"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Tags:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Separate tags with commas"
+              id="tags"
+              {...register("tags")}
+            />
+          </div>
+          <div className="row mb-4">
+            <div className="col-md-6">
+              <label
+                htmlFor="prepareTime"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Prep Time (minutes):
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="prepareTime"
+                {...register("prepareTime")}
+              />
+            </div>
+            <div className="col-md-6">
+              <label
+                htmlFor="cookTime"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Cook Time (minutes):
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="cookTime"
+                {...register("cookTime")}
+              />
+            </div>
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="ingredients"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Ingredients:
+            </label>
+            <textarea
+              className="form-control"
+              rows="5"
+              id="ingredients"
+              placeholder="List each ingredient on a new line"
+              {...register("ingredients")}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="steps"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Instructions:
+            </label>
+            <textarea
+              className="form-control"
+              rows="8"
+              id="steps"
+              placeholder="Write clear and concise instructions"
+              {...register("steps")}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="servings"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Servings:
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="servings"
+              {...register("servings")}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="servingSizes"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Serving Size (per serving):
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="e.g., 1 cup"
+              id="servingSizes"
+              {...register("servingSizes")}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="recipeImage"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Recipe Photo:
+            </label>
+            <input
+              type="file" // Changed from 'url' to 'file' to accept image uploads
+              className="form-control"
+              id="recipeImage"
+              onChange={handleImageChange}
+            />
+          </div>
         </fieldset>
         <button type="submit" className="btn btn-primary mt-4">
           Submit Recipe

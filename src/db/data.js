@@ -30,6 +30,7 @@ const data = [
   {
     id: "24",
     name: "Spaghetti and Meatballs",
+    username: "Sn",
     tags: ["italian", "pasta", "meatballs", "dinner"],
     prepareTime: 30,
     cookTime: 40,

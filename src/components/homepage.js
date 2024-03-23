@@ -22,8 +22,7 @@ const BackgroundImage = styled.div`
   background-image: url(https://i.pinimg.com/564x/83/64/e9/8364e9e019d3ee62d9604918eb311e95.jpg);
   background-size: cover;
   background-position: center;
-  height: 85vh;
-  width: 100vw;
+  height: 80.8vh;
 `;
 
 const ButtonContainer = styled.div`
