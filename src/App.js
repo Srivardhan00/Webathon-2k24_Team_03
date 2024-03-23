@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./components/RootLayout";
+import HomePage from "./components/homepage";
+import SignUp from "./components/signUp";
+import Login from "./components/Login";
+import DetailsComponent from "./components/DetailsComponent";
+import ProductsGrid from "./components/ProductsGrid";
+import RecipeForm from "./components/RecipeForm"
 function App() {
+  let browserRouter = createBrowserRouter([
+    {
+      path: "",
+      element: <RootLayout />,
+      children: [
+        {
+          path: "",
+          element: <HomePage />,
+        },
+        {
+          path: "/signup",
+          element: <SignUp />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/recipe/:id",
+          element: <DetailsComponent />,
+        },
+        {
+          path: "/main",
+          element: <ProductsGrid />,
+        },
+        {
+          path: "/main",
+          element: <ProductsGrid />,
+        },
+        {
+          path:"/new-recipe",
+          element:<RecipeForm/>
+        }
+      ],
+    },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={browserRouter}></RouterProvider>
+    </>
   );
 }
 

@@ -1,0 +1,17 @@
+.recipe-Name{
+    font-size: 25px;
+    font-weight: bold;
+}
+.card{
+    padding: 15px;
+    width: 280px;
+    height:420px;
+    background-color: rgba(214, 205, 145, 0.836);
+}
+.card-img{
+    height: 180px;
+    width: 100%;
+}
+.card-link{
+    text-decoration: solid;
+}

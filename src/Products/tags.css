@@ -1,0 +1,10 @@
+.tag{
+    height: 20px;
+    margin: 0px 5px;
+    color: black;
+    background-color: rgba(39, 99, 220, 0.661);
+}
+ul{
+    display: inline;
+    padding: 0;
+}
